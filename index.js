@@ -199,7 +199,7 @@ class SubShell {
 	async *readStream() {
 		const iterator = new EventIterator(
 			push => {
-				this.shell.term.on('data', push)
+				this.shell.term.onData(push)
 				this.shell.detach()
 			},
 			push => {
