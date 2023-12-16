@@ -47,5 +47,17 @@
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.5"
+  },
+  "prettier": {
+    "printWidth": 70,
+    "useTabs": true,
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "arrowParens": "avoid",
+    "quoteProps": "preserve",
+    "proseWrap": "never"
   }
 }
