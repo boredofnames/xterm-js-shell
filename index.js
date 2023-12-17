@@ -188,6 +188,10 @@ export default class XtermJSShell {
 	async printList(list) {
 		return this.echo.printWide(list)
 	}
+
+	async clear() {
+		return this.term.clear()
+	}
 }
 
 class SubShell {
@@ -242,6 +246,11 @@ class SubShell {
 	async printList(list) {
 		this.checkDestroyed()
 		this.shell.printList(list)
+	}
+
+	async clear() {
+		this.checkDestroyed()
+		this.shell.clear()
 	}
 
 	get color() {
