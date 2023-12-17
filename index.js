@@ -202,13 +202,14 @@ class SubShell {
 	}
 
 	async *readStream() {
+		let dataListener
 		const iterator = new EventIterator(
 			push => {
-				this.shell.term.onData(push)
+				dataListener = this.shell.term.onData(push)
 				this.shell.detach()
 			},
-			push => {
-				this.shell.term.off('data', push)
+			() => {
+				dataListener.dispose()
 				this.shell.attach()
 			},
 		)
