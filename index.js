@@ -111,6 +111,7 @@ export default class XtermJSShell {
 	 * @return {Promise}                Resolves after the command has finished
 	 */
 	async run(command, args, flags) {
+		if (!command) return
 		if (!this.commands.has(command))
 			throw new TypeError(ERROR_NOT_FOUND(command))
 
